@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- CDN from : https://cdnjs.com/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js" integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>JQuery validation </title>
+    <style>
+        .error{
+            color: red;
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('#myform').validate({
+                rules:{
+                    username:{
+                        required:true
+                    },
+                    mail:{
+                        required:true
+                    },
+                    agree:{
+                        required:true
+                    },
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Subscription form</h1>
+    <form action="" id="myform">
+        <table>
+            <tr>
+                <td>
+                    <label for="username"> user name </label>
+                </td>
+                <td>
+                    <input type="text" name="username" id="username">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="email">email</label>
+                </td>
+                <td>
+                    <input type="email" name="mail" id="mail">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="checkbox" name="agree" id="agree">
+                    <label for="agree">I agree to the terms and condition</label>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Register"></td>
+                <td><input type="reset" value="Clear"></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
